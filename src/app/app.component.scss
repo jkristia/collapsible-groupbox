@@ -1,0 +1,16 @@
+.main {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+.col {
+    width: 300px;
+    padding: 5px;
+}

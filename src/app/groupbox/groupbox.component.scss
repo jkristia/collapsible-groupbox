@@ -1,0 +1,63 @@
+
+$header-background: transparent;
+$header-background-hover: #444;
+$header-color: #eee;
+$border: 1px solid #ffffff40;
+
+.groupbox-container {
+    .header {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        background-color: $header-background;
+        color: $header-color;
+        padding: 10px;
+        &:hover {
+            background-color: $header-background-hover;
+            .title {
+                background-color: $header-background-hover;
+            }
+        }
+        .title {
+            padding: 5px;
+        }
+        .spacer {
+            flex: 1;
+            border: $border;
+            margin-right: 5px;
+        }
+        .button {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: transform 0.2s ease-out;
+            transform: rotate(-90deg);
+            font-family: monospace;
+        }
+    }
+    &.expanded {
+        .content {
+            max-height: 1000px;
+        }
+        .header .button {
+            transform: rotate(90deg);
+        }
+    }
+
+    .content {
+        .inner-content {
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height .25s ease-in-out;        
+    }
+}

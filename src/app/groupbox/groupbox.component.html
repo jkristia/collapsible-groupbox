@@ -1,0 +1,15 @@
+
+
+<div class="groupbox-container" [ngClass]="{ 'expanded': expanded}">
+    <div class="header" (click)="expandToggle($event)">
+        <div class="title">{{title}}</div>
+        <div class="spacer"></div>
+        <!-- need image here -->
+        <div class="button">&gt;</div>
+    </div>
+    <div class="content">
+        <div class="inner-content">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>
