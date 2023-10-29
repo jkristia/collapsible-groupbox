@@ -23,7 +23,8 @@ $border: 1px solid #ffffff40;
         }
         .spacer {
             flex: 1;
-            border: $border;
+            border-top: $border;
+            margin-top: 1px;
             margin-right: 5px;
         }
         .button {
@@ -40,20 +41,20 @@ $border: 1px solid #ffffff40;
         }
     }
     &.expanded {
-        .content {
-            max-height: 1000px;
-        }
         .header .button {
-            transform: rotate(90deg);
+            transform: rotate(-0.75turn);
         }
     }
 
     .content {
+        display: flex;
+        flex-direction: column;        
         .inner-content {
             height: 100%;
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            overflow:hidden;
         }
 
         max-height: 0px;

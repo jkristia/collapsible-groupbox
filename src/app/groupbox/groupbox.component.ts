@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, NgModule } from '@angular/core';
+import { Component, Input, NgModule } from '@angular/core';
 
 @Component({
   selector: 'groupbox',
@@ -8,9 +8,16 @@ import { Component, NgModule } from '@angular/core';
 })
 export class GroupBoxComponent {
 
-    title = 'A GroupBox';
+    @Input() name = '';
+    @Input() maxHeight = '500px'; // max height is required for animation to work
     expanded = false;
 
+    get expandedMaxHeight(): string {
+      if (this.expanded) {
+        return this.maxHeight;
+      }
+      return '0';
+    }    
     expandToggle(e: MouseEvent) {
         e.stopPropagation();
         this.expanded = !this.expanded;
